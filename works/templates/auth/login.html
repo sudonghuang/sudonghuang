@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+</head>
+<body>
+<form action="/login/" method="post">
+      {% csrf_token %}
+        <table>
+            <tr>
+                <th>用户登录</th>
+            </tr>
+            <tr>
+                <td>用户名：</td>
+                <td>
+                    <input type="text" name="user_name" value={{ username }}>
+                </td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td>
+                    <input type="password" name="password" value={{ password }}>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value= "登录">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><font color="red">{{ error_Info }}</font></td>
+            </tr>
+        </table>
+</form>
+</body>
+</html>
